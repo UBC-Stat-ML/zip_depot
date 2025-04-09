@@ -20,8 +20,9 @@ The scripts in `bin` implements a workaround. To use it:
 - Add to you `.bashrc`: 
 
 ```
-export PATH="$PATH:/path/to/zip_depot/bin"
-load_depot
+ZIP_DEPOT_PATH_BIN=/path/to/zip_depot/bin
+export PATH="$PATH:$ZIP_DEPOT_PATH_BIN"
+source $ZIP_DEPOT_PATH_BIN/load_depot
 ```
 
 - Behind the scene, when you log in, `load_depot` will use an archived zip 
