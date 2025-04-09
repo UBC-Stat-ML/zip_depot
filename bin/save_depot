@@ -1,6 +1,6 @@
 if [ ! -d "$UNZIPPED_JULIA_DEPOT_PATH" ]; then
     echo "Need to setup depot path first. Make sure load_depot is in .bashrc"
-    return
+    exit 1
 fi
 
 # repair if got mangled
