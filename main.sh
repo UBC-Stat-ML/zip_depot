@@ -27,7 +27,3 @@ save_depot() {
   cd - > /dev/null
 }
 export -f save_depot
-
-if [ -z "$JULIA_DEPOT_PATH" ]; then
-  load_depot
-fi
