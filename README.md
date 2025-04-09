@@ -32,3 +32,31 @@ source $ZIP_DEPOT_PATH_BIN/load_depot
     `~/.depot.zip` overriding previous changes. 
 
     - If you have a separate terminal open, use `load_depot` to force reloading the new depot after updating it. 
+
+
+- When you submit jobs, `.bashrc` does not get automatically called, so you need to add this in your SLURM script:
+
+```
+source /path/to/zip_depot/bin/load_depot
+```
+
+- In MPI Pigeons, this is accomplished with:
+
+```
+setup_mpi(
+    ...
+	add_to_submission = ["source ~/bin/zip_depot/bin/load_depot"],
+    ...
+)
+```
+
+For example in compute Canada:
+
+```
+setup_mpi(
+        submission_system = :slurm,
+        environment_modules = ["julia/1.11.3"],
+	    add_to_submission = ["source ~/bin/zip_depot/bin/load_depot"],
+        library_name = "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v4/Compiler/gcc12/openmpi/4.1.5/lib/libmpi"
+    )
+```
