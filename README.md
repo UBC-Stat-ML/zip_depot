@@ -29,7 +29,9 @@ source $ZIP_DEPOT_PATH_BIN/load_depot
     depot (in `~/.depot.zip`), copy that single file to a temporary local storage, unzip there, and use the temporary location as the depot for this session. 
 
 - When you make a change to your julia depot, type `save_depot`, this will zip the current $JULIA_DEPOT_PATH into 
-    `~/.depot.zip` overriding previous changes. 
+    `~/.depot.zip` overriding previous changes.
+
+    - Tip: you can do this without leaving the Julia REPL with `;save_depot` and then `^c`
 
     - If you have a separate terminal open, use `load_depot` to force reloading the new depot after updating it. 
 
