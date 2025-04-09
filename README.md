@@ -15,12 +15,14 @@
 
 The script in `main.sh` implements a workaround. To use it:
 
+- Remove any manually specified `$JULIA_DEPOT_PATH` (this script will generate one automatically instead)
+
 - Add to you `.bashrc`: 
 
 ```
 source /path/to/main.sh
 ```
 
-- When you make a change to your julia depot, type `save_depot`
+- When you make a change to your julia depot, type `save_depot`, this will zip the depot
 
-- If you have a second terminal open, use `load_depot` to force reloading it. 
+- If you have a second terminal open, use `load_depot` to force reloading the new depot. 
