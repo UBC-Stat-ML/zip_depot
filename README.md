@@ -13,14 +13,14 @@
 
 # Solution
 
-The script in `main.sh` implements a workaround. To use it:
+The scripts in `bin` implements a workaround. To use it:
 
-- Remove any manually specified `$JULIA_DEPOT_PATH` (this script will generate one automatically instead)
+- Remove from .bashrc and your session any manually specified `$JULIA_DEPOT_PATH` (this script will generate one automatically instead)
 
 - Add to you `.bashrc`: 
 
 ```
-source /path/to/main.sh
+export PATH="$PATH:/path/to/zip_depot/bin"
 load_depot
 ```
 

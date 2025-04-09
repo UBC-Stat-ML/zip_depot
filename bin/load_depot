@@ -1,0 +1,11 @@
+TEMP_DIR=$(mktemp -d)
+export JULIA_DEPOT_PATH="$TEMP_DIR/depot"
+echo "Setting up depot into $JULIA_DEPOT_PATH"
+
+if [ -f "$HOME/.depot.zip" ]; then
+    cp "$HOME/.depot.zip" "$TEMP_DIR/"
+    unzip -q "$TEMP_DIR/.depot.zip" -d "$TEMP_DIR/"
+fi
+
+# need to keep a private copy in case it gets mangled by module 
+export UNZIPPED_JULIA_DEPOT_PATH=$JULIA_DEPOT_PATH

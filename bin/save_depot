@@ -1,0 +1,15 @@
+if [ ! -d "$UNZIPPED_JULIA_DEPOT_PATH" ]; then
+    echo "Need to setup depot path first. Make sure load_depot is in .bashrc"
+    return
+fi
+
+# repair if got mangled
+export JULIA_DEPOT_PATH=$UNZIPPED_JULIA_DEPOT_PATH
+
+ZIP_FILE="$HOME/.depot.zip"
+[ -f "$ZIP_FILE" ] && rm "$ZIP_FILE" 
+PARENT_DIR="$(dirname "$JULIA_DEPOT_PATH")" 
+cd $PARENT_DIR
+zip -rq depot.zip depot
+mv depot.zip "$ZIP_FILE"
+cd - > /dev/null
