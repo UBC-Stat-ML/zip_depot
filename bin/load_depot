@@ -1,3 +1,5 @@
+#!/bin/bash
+
 TEMP_DIR=$(mktemp -d)
 export JULIA_DEPOT_PATH="$TEMP_DIR/depot"
 echo "Setting up depot into $JULIA_DEPOT_PATH"
@@ -9,3 +11,4 @@ fi
 
 # need to keep a private copy in case it gets mangled by module 
 export UNZIPPED_JULIA_DEPOT_PATH=$JULIA_DEPOT_PATH
+
