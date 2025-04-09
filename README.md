@@ -23,6 +23,10 @@ The script in `main.sh` implements a workaround. To use it:
 source /path/to/main.sh
 ```
 
-- When you make a change to your julia depot, type `save_depot`, this will zip the depot
+    - Behind the scene, when you log in, if $JULIA_DEPOT_PATH is not defined, it will use an archived zip 
+    depot (`~/.depot.zip`), copy that single file to a temporary local storage, unzip there, and use the temporary location as the depot for this session. 
 
-- If you have a second terminal open, use `load_depot` to force reloading the new depot. 
+- When you make a change to your julia depot, type `save_depot`, this will zip the current $JULIA_DEPOT_PATH into 
+    `~/.depot.zip` overriding previous changes. 
+
+    - If you have a separate terminal open, use `load_depot` to force reloading the new depot after updating it. 
