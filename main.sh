@@ -29,5 +29,5 @@ save_depot() {
 export -f save_depot
 
 if [ -z "$JULIA_DEPOT_PATH" ]; then
-  setup_depot
+  load_depot
 fi
